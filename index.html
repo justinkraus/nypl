@@ -11,16 +11,31 @@
 ::-webkit-scrollbar{width:2px;height:2px;}
 ::-webkit-scrollbar-button{width:2px;height:2px;}
 
-.column1 {
-  flex: 50%;
+.infoColumn {
+  flex: 10%;
+/*  width: 240px;*/
   display: flex;
   justify-content: right;
+  align-items: flex-end;
   text-align: right;
   flex-direction: column;
-  margin:0px 100px;
+  margin:0px 0px;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  border-color: white;
 }
+
+.infoColumn>div:first-child {
+  width: 240px;
+  text-align: right;
+  align-items: flex-end;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+}
+
+
 .column2 {
-  flex: 50%;
+  flex: 90%;
 }
 
 div{
@@ -58,8 +73,9 @@ body {
   position:absolute;
   display:block;
   top:0;
-  left:0;
+  left:700px;
   width:350px;
+/*  padding:900px 0 0 0;*/
   max-height:1600px;
   margin:0;
   background:#abc;
@@ -93,7 +109,7 @@ body {
 .rectangles > div{
   width:800px;
   height:300px;
-  margin:475px 5px;
+  margin:50px 5px;
   padding:1px;
   background:#cab;
   transform:rotate(90deg) translateY(475px);
@@ -102,7 +118,7 @@ body {
 
 .rectangles2{
   top:500px;
-  padding:1150px 0 0 0;
+  padding:730px 0 0 0;
 }
 .rectangles2 > div{
   width:800px;
@@ -183,10 +199,14 @@ body {
     </div>
   </div>
 </div>
-<div class="column1">
-  <ul id="titleArray">
-    <p>here I am</p>
-  </ul>
+<div class="fakediv">
+</div>
+<div class="infoColumn">
+  <div>
+    <ul id="titleArray">
+      <p>here I am</p>
+    </ul>
+  </div>
 </div>
 <!--   <div tabindex="0">item 2</div>
   <div tabindex="0">item 3</div>
