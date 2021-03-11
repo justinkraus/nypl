@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  <title>Project Remix</title> -->
+</head>
+<!-- code from here -->
+<!-- https://css-tricks.com/pure-css-horizontal-scrolling/ -->
+<style>
+::-webkit-scrollbar{width:2px;height:2px;}
+::-webkit-scrollbar-button{width:2px;height:2px;}
+
+.column1 {
+  flex: 50%;
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  flex-direction: column;
+  margin:0px 100px;
+}
+.column2 {
+  flex: 50%;
+}
+
+div{
+  box-sizing:border-box;
+  border: 4px solid transparent;
+}
+div:focus{
+/*    border: 4px solid #f00;*/
+    width:60px;
+    height:60px;
+/*    margin:10px;  */   
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+body {
+  background: #111;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color:white;
+}
+
+#title1{
+  top:50px;
+}
+#title2{
+  top:430px;
+  position:absolute;
+}
+
+.horizontal-scroll-wrapper{
+  position:absolute;
+  display:block;
+  top:0;
+  left:0;
+  width:350px;
+  max-height:1600px;
+  margin:0;
+  background:#abc;
+  overflow-y:auto;
+  overflow-x:hidden;
+  transform:rotate(-90deg) translateY(-750px);
+  transform-origin:right top;
+}
+.horizontal-scroll-wrapper > div{
+  display:block;
+  padding:5px;
+  background:#cab;
+  transform:rotate(90deg);
+  transform-origin: right top;
+}
+
+.squares{
+  padding:60px 0 0 0;
+}
+
+.squares > div{
+  width:60px;
+  height:60px;
+  margin:10px;
+}
+
+.rectangles{
+  top:80px;
+  padding:750px 0 0 0;
+}
+.rectangles > div{
+  width:800px;
+  height:300px;
+  margin:475px 5px;
+  padding:1px;
+  background:#cab;
+  transform:rotate(90deg) translateY(475px);
+  transform-origin: right top;
+}
+
+.rectangles2{
+  top:500px;
+  padding:1150px 0 0 0;
+}
+.rectangles2 > div{
+  width:800px;
+  height:300px;
+  margin:70px 5px;
+  padding:1px;
+  background:#cab;
+  transform:rotate(90deg) translateY(475px);
+  transform-origin: right top;
+}
+</style>
+<div class="column2">
+<h1 id="title1">Buildings of New York</h1>
+<div class="horizontal-scroll-wrapper rectangles">
+    <div id="pic1" tabindex="0" onclick="myFunction(this)" data-other-attr='XX' name="Broadway, West Side. 10th to 12th St.">
+      <img tabindex="0" src="./images/bway1.jpg" >
+      <span>Broadway, West Side. 10th to 12th St.</span>
+      <span>1992</span>
+    </div>
+    <div id="pic2" tabindex="0" onclick="myFunction(this)">
+      <img tabindex="0" src="./images/bway2.jpg">
+      <span>2nd span</span>
+      <span>1995</span>
+    </div>
+    <div id="pic3" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway3.jpg">
+    </div>
+    <div id="pic4" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway4.jpg">
+    </div>
+    <div id="pic5" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway5.jpg">
+    </div>
+    <div id="pic6" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway6.jpg">
+    </div>
+    <div id="pic7" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway7.jpg">
+    </div>
+    <div id="pic8" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway8.jpg">
+    </div>
+    <div id="pic9" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/bway9.jpg">
+    </div>
+  </div>
+<h1 id="title2">The Way We Were</h1>
+<div class="horizontal-scroll-wrapper rectangles2">
+    <div id="pic1" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" onclick="myFunction()" src="./images/fsa1.jpg">
+    </div>
+    <div id="pic2" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa2.jpg">
+    </div>
+    <div id="pic3" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa3.jpg">
+    </div>
+    <div id="pic4" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa4.jpg">
+    </div>
+    <div id="pic5" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa5.jpg">
+    </div>
+    <div id="pic6" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa6.jpg">
+    </div>
+    <div id="pic7" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa7.jpg">
+    </div>
+    <div id="pic8" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa8.jpg">
+    </div>
+    <div id="pic9" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa9.jpg">
+    </div>
+    <div id="pic10" tabindex="0" onclick="myFunction()">
+      <img tabindex="0" src="./images/fsa10.jpg">
+    </div>
+  </div>
+</div>
+<div class="column1">
+  <ul id="titleArray">
+    <p>here I am</p>
+  </ul>
+</div>
+<!--   <div tabindex="0">item 2</div>
+  <div tabindex="0">item 3</div>
+  <div tabindex="0">item 4</div>
+  <div tabindex="0">item 5</div>
+  <div tabindex="0">item 6</div>
+  <div tabindex="0">item 7</div>
+  <div tabindex="0">item 8</div> -->
+
+<!-- <div class="horizontal-scroll-wrapper  rectangles">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+  <div>item 6</div>
+  <div>item 7</div>
+  <div>item 8</div>
+</div> -->
+<script>
+  // create empty arrays for items
+  var titleArr = [];
+  // On mouse-over, execute myFunction
+function myFunction(ele) {
+  //target specific element attributes for info
+  //found idea here https://stackoverflow.com/questions/39670263/javascript-get-attributes-of-clicked-button
+  var name = ele.getAttribute('name');
+  var date = console.log(ele.getAttribute('data-other-attr'));
+
+  //check if value exists in array
+  var check = titleArr.includes(name)? 'Exist' : 'Does not exist';
+  console.log(check)
+
+  //create parent list variables
+  var titleul = document.getElementById('titleArray')
+
+  // add and remove pieced together from: 
+  // https://stackoverflow.com/questions/36035736/add-remove-li-element-from-the-ul-javascript
+
+
+  if (check == 'Does not exist'){
+      var titleli = document.createElement("li");
+      titleli.appendChild(document.createTextNode(name))
+      titleli.setAttribute("id", name);
+      titleul.appendChild(titleli);
+      titleli.innerHTML= name + "<button class='btn'>X</button>";
+      titleli.addEventListener('click', function () {
+        this.parentNode.removeChild(this);
+      });
+      // push attributes into item arrays
+      titleArr.push(name);
+      console.log(titleArr)
+  // titleHTML.innerHTML = titleArr;
+}
+if (check == 'Exist'){
+      var titleli = document.getElementById(name);
+      // console.log(titleli)
+      titleul.removeChild(titleli);
+      var index = titleArr.indexOf(name)
+      if (index !== -1) {
+      titleArr.splice(index, 1);
+      }
+      console.log(name)
+  }
+  }
+
+  
+
+  
+  // console.log(titleArr)
+
+</script>
+</html>
