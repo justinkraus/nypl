@@ -11,31 +11,71 @@
 ::-webkit-scrollbar{width:2px;height:2px;}
 ::-webkit-scrollbar-button{width:2px;height:2px;}
 
-.infoColumn {
-  flex: 10%;
-/*  width: 240px;*/
+.row {
   display: flex;
-  justify-content: right;
-  align-items: flex-end;
-  text-align: right;
-  flex-direction: column;
-  margin:0px 0px;
-  word-wrap: break-word;
+  flex-direction: row;
   flex-wrap: wrap;
-  border-color: white;
+  width: 100%;
+}
+
+.infoColumn {
+/*  flex-direction: column;*/
+  flex-basis: 12%;
+/*  flex: 1;*/
+  display: flex;
+  /*width: 195px;*/
+  justify-content: left;
+ /* align-items: flex-start;*/
+  text-align: left;
+  margin:0px 0px;
+/*  word-wrap: break-word;*/
+  flex-wrap: wrap;
+  /*border-color: white;*/
+  height:95vh;
+  border-right: 1px solid #333;
 }
 
 .infoColumn>div:first-child {
-  width: 240px;
-  text-align: right;
-  align-items: flex-end;
-  word-wrap: break-word;
-  flex-wrap: wrap;
 }
 
+.fakediv{
+  flex:88%;
+}
+
+.star1{
+  position: absolute;
+  left: 525px;
+  top:180px;
+  font-size: 40px;
+}
+
+.star2{
+  position: absolute;
+  left: 220px;
+  top:180px;
+  font-size: 40px;
+}
 
 .column2 {
-  flex: 90%;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  /*border-color: white*/;
+  display: flex;
+}
+
+li{
+  font-size: 10px;
+}
+
+ul{
+padding: 0px;
+}
+
+hr{
+  height: 1px;
+  border: none;
+  background-color: #333;
 }
 
 div{
@@ -61,24 +101,36 @@ body {
   color:white;
 }
 
-#title1{
+/*#title1{
   top:50px;
-}
+}*/
 #title2{
   top:430px;
   position:absolute;
 }
 
+.shade{
+  position: absolute;
+  top: 10px;
+  left: 1550px;
+  height: 800px;
+  width: 350px;
+  border: none;
+  /*background:black;*/
+  /*opacity: .9;*/
+  background-image: linear-gradient(to right, transparent 0%, #111 80%);
+}
+
 .horizontal-scroll-wrapper{
   position:absolute;
   display:block;
-  top:0;
-  left:700px;
-  width:350px;
+  top:0px;
+  left:750px;
+  width:250px;
 /*  padding:900px 0 0 0;*/
   max-height:1600px;
   margin:0;
-  background:#abc;
+  /*background:#abc;*/
   overflow-y:auto;
   overflow-x:hidden;
   transform:rotate(-90deg) translateY(-750px);
@@ -87,7 +139,7 @@ body {
 .horizontal-scroll-wrapper > div{
   display:block;
   padding:5px;
-  background:#cab;
+  /*background:#cab;*/
   transform:rotate(90deg);
   transform-origin: right top;
 }
@@ -104,164 +156,193 @@ body {
 
 .rectangles{
   top:80px;
-  padding:750px 0 0 0;
+  padding:500px 0 0 0;
 }
 .rectangles > div{
   width:800px;
-  height:300px;
-  margin:50px 5px;
+  height:225px;
+  margin:350px -90px;
   padding:1px;
-  background:#cab;
+  /*background:#cab;*/
   transform:rotate(90deg) translateY(475px);
   transform-origin: right top;
 }
 
 .rectangles2{
   top:500px;
-  padding:730px 0 0 0;
+  padding:780px 0 0 0;
 }
 .rectangles2 > div{
   width:800px;
-  height:300px;
-  margin:70px 5px;
+  height:225px;
+  margin:70px -90px;
   padding:1px;
-  background:#cab;
+  /*background:#cab;*/
   transform:rotate(90deg) translateY(475px);
   transform-origin: right top;
 }
 </style>
+<div class="row">
+<div class="infoColumn">
+    <div class="innerInfoColumn">
+      <h2>NYPL Redesign</h2>
+      <a href="https:github.com/justinkraus/nypl">About</a>
+      <br>
+      <p>Click Images to Add to Personal Collection</p>
+      <h3>Names</h3>
+      <ul id="titleArray"></ul>
+      <hr>
+      <h3>Years</h3>
+      <ul id="yearArray"></ul>
+      <hr>
+      <h3>Topics</h3>
+      <ul id="topicArray"></ul>
+      <hr>
+      <h3>Recommendations</h3>
+      <ul id="recArray"></ul>
+      <hr>
+    </div>
+</div>
 <div class="column2">
+<!-- <div class="fakediv"></div> -->
 <h1 id="title1">Buildings of New York</h1>
 <div class="horizontal-scroll-wrapper rectangles">
-    <div id="pic1" tabindex="0" onclick="myFunction(this)" data-other-attr='XX' name="Broadway, West Side. 10th to 12th St.">
+    <div id="pic1" tabindex="0" onclick="myFunction(this)" name='Broadway, West Side. 10th to 12th St.' data-other-year='1899-1' data-other-topic='New York City Architecture, Broadway' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Broadway</a>'>
       <img tabindex="0" src="./images/bway1.jpg" >
-      <span>Broadway, West Side. 10th to 12th St.</span>
-      <span>1992</span>
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic2" tabindex="0" onclick="myFunction(this)">
+    <div id="pic2" tabindex="0" onclick="myFunction(this)" name='Broadway, East Side. 8th to 10th St.' data-other-year='1899-2' data-other-topic='New York City Architecture, Westside' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Westside</a>'>
       <img tabindex="0" src="./images/bway2.jpg">
-      <span>2nd span</span>
-      <span>1995</span>
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic3" tabindex="0" onclick="myFunction()">
+    <div id="pic3" tabindex="0" onclick="myFunction(this)" name='Broadway, West Side. Exchange Alley to Trinity Church' data-other-year='1899-3' data-other-topic='New York City Architecture, Exchange' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Exchange</a>'>
       <img tabindex="0" src="./images/bway3.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic4" tabindex="0" onclick="myFunction()">
+    <div id="pic4" tabindex="0" onclick="myFunction(this)" name='Broadway, East Side. 3rd st. to Old London Bldg' data-other-year='1899-4' data-other-topic='New York City Architecture, Old London' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Old London</a>'>
       <img tabindex="0" src="./images/bway4.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic5" tabindex="0" onclick="myFunction()">
+    <div id="pic5" tabindex="0" onclick="myFunction(this)" name='Broadway West Side, Waverly Place to 8th st' data-other-year='1899-5' data-other-topic='New York City Architecture, Waverly' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Waverly</a>'>
       <img tabindex="0" src="./images/bway5.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic6" tabindex="0" onclick="myFunction()">
+    <div id="pic6" tabindex="0" onclick="myFunction(this)" name='Broadway East Side "Old London" Bldg to 8th st' data-other-year='1899-6' data-other-topic='New York City Architecture, Old London bldg' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, Old London bldg</a>'>
       <img tabindex="0" src="./images/bway6.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic7" tabindex="0" onclick="myFunction()">
+    <div id="pic7" tabindex="0" onclick="myFunction(this)" name='Broadway East Side City Hall Park' data-other-year='1899-7' data-other-topic='New York City Architecture, City Hall' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, City Hall</a>'>
       <img tabindex="0" src="./images/bway7.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic8" tabindex="0" onclick="myFunction()">
+    <div id="pic8" tabindex="0" onclick="myFunction(this)" name='Broadway West Side 87th to 10th st' data-other-year='1899-8' data-other-topic='New York City Architecture, UWS' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, UWS</a>'>
       <img tabindex="0" src="./images/bway8.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic9" tabindex="0" onclick="myFunction()">
+    <div id="pic9" tabindex="0" onclick="myFunction(this)" name='Broadway, East Side. 56th to 59th St.' data-other-year='1899-9' data-other-topic='New York City Architecture, East Midtown' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+City+Architecture">More About New York City Architecture, East Midtown</a>'>
       <img tabindex="0" src="./images/bway9.jpg">
+      <div class="star1" style="visibility:hidden">⭐</div>
     </div>
   </div>
 <h1 id="title2">The Way We Were</h1>
 <div class="horizontal-scroll-wrapper rectangles2">
-    <div id="pic1" tabindex="0" onclick="myFunction()">
-      <img tabindex="0" onclick="myFunction()" src="./images/fsa1.jpg">
+    <div id="pic1" tabindex="0" onclick="myFunction(this)" name='Once a Missouri farmer, now a migratory farm laborer' data-other-year='1936' data-other-topic='Migrant agricultural laborers' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=Migrant+agricultural+laborers">More About Migrant agricultural laborers</a>'>
+      <img tabindex="0" src="./images/fsa1.jpg" >
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic2" tabindex="0" onclick="myFunction()">
+    <div id="pic2" tabindex="0" onclick="myFunction(this)" name='Tillamook County, Oregon. ' data-other-year='1941' data-other-topic='Tillamook County Oregon' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=Tillamook+County+Oregon">More About Tillamook County Oregon</a>'>
       <img tabindex="0" src="./images/fsa2.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic3" tabindex="0" onclick="myFunction()">
+    <div id="pic3" tabindex="0" onclick="myFunction(this)" name='Spectators at the native dance exhibition, Taos, New Mexico' data-other-year='1940' data-other-topic='Taos New Mexico' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=Taos+New+Mexico">More About Taos New Mexico</a>'>
       <img tabindex="0" src="./images/fsa3.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic4" tabindex="0" onclick="myFunction()">
+    <div id="pic4" tabindex="0" onclick="myFunction(this)" name='Room upstairs in Chick Turners Cabaret' data-other-year='1937' data-other-topic='African Americans Performing Arts' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=African+Americans+Performing+Arts">More About African Americans Performing Arts</a>'>
       <img tabindex="0" src="./images/fsa4.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic5" tabindex="0" onclick="myFunction()">
+    <div id="pic5" tabindex="0" onclick="myFunction(this)" name='The Musical Spillers, ala the 10 Musical Spillers' data-other-year='1922' data-other-topic='African American musicians' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=African+American+musicians">More About African American musicians</a>'>
       <img tabindex="0" src="./images/fsa5.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic6" tabindex="0" onclick="myFunction()">
+    <div id="pic6" tabindex="0" onclick="myFunction(this)" name='Abandoned tenant house seen across tractored fields' data-other-year='1938' data-other-topic='Farms' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=Farms">More About Farms</a>'>
       <img tabindex="0" src="./images/fsa6.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic7" tabindex="0" onclick="myFunction()">
+    <div id="pic7" tabindex="0" onclick="myFunction(this)" name='Ladies coats manufactured at the cooperative garment factory, Hightstown, New Jersey' data-other-year='1935' data-other-topic='New Jersey' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+Jersey">More About New Jersey</a>'>
       <img tabindex="0" src="./images/fsa7.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic8" tabindex="0" onclick="myFunction()">
+    <div id="pic8" tabindex="0" onclick="myFunction(this)" name='Furniture factory, Arthurdale, West Virginia' data-other-year='1937' data-other-topic='West Virginia' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=West+Virginia">More About West Virginia</a>'>
       <img tabindex="0" src="./images/fsa8.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic9" tabindex="0" onclick="myFunction()">
+    <div id="pic9" tabindex="0" onclick="myFunction(this)" name='Dancing to the music of "Red" Saunders and his band at the Club DeLisa, Chicago' data-other-year='1942' data-other-topic='Dance' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=Dance">More About Dance</a>'>
       <img tabindex="0" src="./images/fsa9.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
-    <div id="pic10" tabindex="0" onclick="myFunction()">
+    <div id="pic10" tabindex="0" onclick="myFunction(this)" name='New York, NY' data-other-year='1955' data-other-topic='New York Parks Dogs Leisure' data-other-rec='<a href="https://catalog.nypl.org/search~S1/?searchtype=X&searcharg=New+York+Parks+Dogs+Leisure">More About New York Parks Dogs Leisure</a>'>
       <img tabindex="0" src="./images/fsa10.jpg">
+      <div class="star2" style="visibility:hidden">⭐</div>
     </div>
   </div>
+    <div class="shade"></div>
 </div>
-<div class="fakediv">
 </div>
-<div class="infoColumn">
-  <div>
-    <ul id="titleArray">
-      <p>here I am</p>
-    </ul>
-  </div>
-</div>
-<!--   <div tabindex="0">item 2</div>
-  <div tabindex="0">item 3</div>
-  <div tabindex="0">item 4</div>
-  <div tabindex="0">item 5</div>
-  <div tabindex="0">item 6</div>
-  <div tabindex="0">item 7</div>
-  <div tabindex="0">item 8</div> -->
-
-<!-- <div class="horizontal-scroll-wrapper  rectangles">
-  <div>item 1</div>
-  <div>item 2</div>
-  <div>item 3</div>
-  <div>item 4</div>
-  <div>item 5</div>
-  <div>item 6</div>
-  <div>item 7</div>
-  <div>item 8</div>
-</div> -->
 <script>
   // create empty arrays for items
   var titleArr = [];
-  // On mouse-over, execute myFunction
+  var yearArr = [];
+  var topicArr = [];
+  var recArr = [];
+  // On mouse-click, execute myFunction
 function myFunction(ele) {
   //target specific element attributes for info
   //found idea here https://stackoverflow.com/questions/39670263/javascript-get-attributes-of-clicked-button
   var name = ele.getAttribute('name');
-  var date = console.log(ele.getAttribute('data-other-attr'));
+  var year = ele.getAttribute('data-other-year');
+  var topic = ele.getAttribute('data-other-topic');
+  var rec = ele.getAttribute('data-other-rec');
+  var star = ele.childNodes[3]
+  console.log(star.style)
 
-  //check if value exists in array
-  var check = titleArr.includes(name)? 'Exist' : 'Does not exist';
-  console.log(check)
+  if (star.style.visibility=='hidden'){
+    star.style.visibility='visible';
+  } else {
+    star.style.visibility='hidden';
+  };
+  //check if value exists in arrays
+  var checkName = titleArr.includes(name)? 'Exist' : 'Does not exist';
+  var checkYear = yearArr.includes(year)? 'Exist' : 'Does not exist';
+  var checkTopic = topicArr.includes(topic)? 'Exist' : 'Does not exist';
+  var checkRec = recArr.includes(rec)? 'Exist' : 'Does not exist';
+
+  console.log(checkName)
 
   //create parent list variables
   var titleul = document.getElementById('titleArray')
+  var yearul = document.getElementById('yearArray')
+  var topicul = document.getElementById('topicArray')
+  var recul = document.getElementById('recArray')
+
 
   // add and remove pieced together from: 
   // https://stackoverflow.com/questions/36035736/add-remove-li-element-from-the-ul-javascript
 
-
-  if (check == 'Does not exist'){
+  // checks for names
+  if (checkName == 'Does not exist'){
       var titleli = document.createElement("li");
       titleli.appendChild(document.createTextNode(name))
       titleli.setAttribute("id", name);
       titleul.appendChild(titleli);
-      titleli.innerHTML= name + "<button class='btn'>X</button>";
-      titleli.addEventListener('click', function () {
-        this.parentNode.removeChild(this);
-      });
+      titleli.innerHTML= name;
       // push attributes into item arrays
       titleArr.push(name);
       console.log(titleArr)
   // titleHTML.innerHTML = titleArr;
 }
-if (check == 'Exist'){
+if (checkName == 'Exist'){
       var titleli = document.getElementById(name);
       // console.log(titleli)
       titleul.removeChild(titleli);
@@ -271,6 +352,70 @@ if (check == 'Exist'){
       }
       console.log(name)
   }
+
+//checks for years
+if (checkYear == 'Does not exist'){
+      var yearli = document.createElement("li");
+      yearli.appendChild(document.createTextNode(year))
+      yearli.setAttribute("id", year);
+      yearul.appendChild(yearli);
+      yearli.innerHTML= year;
+      // push attributes into item arrays
+      yearArr.push(year);
+      console.log(yearArr)
+}
+if (checkYear == 'Exist'){
+      var yearli = document.getElementById(year);
+      yearul.removeChild(yearli);
+      var index = yearArr.indexOf(year)
+      if (index !== -1) {
+      yearArr.splice(index, 1);
+      }
+      console.log(year)
+  }  
+
+  //checks for topics
+if (checkTopic == 'Does not exist'){
+      var topicli = document.createElement("li");
+      topicli.appendChild(document.createTextNode(topic))
+      topicli.setAttribute("id", topic);
+      topicul.appendChild(topicli);
+      topicli.innerHTML= topic;
+      // push attributes into item arrays
+      topicArr.push(topic);
+      console.log(topicArr)
+}
+if (checkTopic == 'Exist'){
+      var topicli = document.getElementById(topic);
+      topicul.removeChild(topicli);
+      var index = topicArr.indexOf(topic)
+      if (index !== -1) {
+      topicArr.splice(index, 1);
+      }
+      console.log(topic)
+  }  
+    //checks for recs
+if (checkRec == 'Does not exist'){
+      var recli = document.createElement("li");
+      recli.appendChild(document.createTextNode(rec))
+      recli.setAttribute("id", rec);
+      recul.appendChild(recli);
+      recli.innerHTML= rec;
+      // push attributes into item arrays
+      recArr.push(rec);
+      console.log(recArr)
+}
+if (checkRec == 'Exist'){
+      var recli = document.getElementById(rec);
+      recul.removeChild(recli);
+      var index = recArr.indexOf(rec)
+      if (index !== -1) {
+      recArr.splice(index, 1);
+      }
+      console.log(rec)
+  }  
+
+
   }
 
   
